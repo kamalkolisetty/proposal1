@@ -99,6 +99,20 @@
         font-size: 30px;
       }
     }
+
+    #start-button {
+      position: absolute;
+      top: 20px;
+      background-color: #FF2E2E;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin-top: 190px;
+      margin-left: 60px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
@@ -106,6 +120,11 @@
   <div id="image"></div>
   <div id="heart-container"></div>
   <div id="text1"></div>
+  <button id="start-button">Hi 🤗</button>
+
+  <!-- Add an audio element -->
+  <audio id="audio" src="./audio.mp3"></audio>
+
   <script>
     const container = document.getElementById('heart-container');
     let typingStopped = false;
@@ -140,9 +159,11 @@
     var i = 0;
     var txt1 = " Hi SweetHeart.....!😊  < Now I wan't to say something special to you.🫣 <<     So , Please read everything carefully...! 😚                                                       > When I saw you for the first time < You seems something Special to me. 🫠 <<                  As the days goes < you get closer to me....!💝💝 <<                           I don't know the reason why your thoughts always resonates inside my mind  ...!🥹                                                    > Everything about you is always intresting for me...!🥰                     << I am somewhat nervous🥴 << Because I haven't said these words to anyone and I won't say to anyone in future...!🙃                                                     > I Love my Parents so much than anything else in this world....!                    << Now You are the only person  whom I love equally with my parents....! 🫠                                                            >I Love U <SweetHeart.....! ❤️❤️❤️|                  <<<< Give me One chance to Prove my Love ...!     💞💞💞                                                                      " ;
     var speed = 90;
+
     function isMobileDevice() {
-  return   window.innerWidth <= 768;
-}
+      return window.innerWidth <= 768;
+    }
+
     function typeWriter() {
       if (i < txt1.length && !typingStopped) {
         if (txt1.charAt(i) == '<')
@@ -158,29 +179,63 @@
         } else if (txt1.charAt(i) == '9') {
           if (isMobileDevice()) {
             document.getElementById('image').style.backgroundImage = "none";
-          document.getElementById("text1").innerHTML = '';
-        document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/28/d7/49/28d74956205425211e1828a697e73b03.jpg')";
-        document.body.style.backgroundSize = "cover"; // Ensure the image covers the entire viewport
-      document.body.style.backgroundRepeat = "no-repeat"; // Prevent image repetition
-      } else{ 
-          document.getElementById('image').style.backgroundImage = "none";
-          document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/86/3a/76/863a7668df24921afd5c6c62d8ae9dee.jpg')";
-          document.getElementById("text1").innerHTML = '';
-          stopHearts();
-        }
-       } else {
+            document.getElementById("text1").innerHTML = '';
+            document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/28/d7/49/28d74956205425211e1828a697e73b03.jpg')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+          } else {
+            document.getElementById('image').style.backgroundImage = "none";
+            document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/86/3a/76/863a7668df24921afd5c6c62d8ae9dee.jpg')";
+            document.getElementById("text1").innerHTML = '';
+            stopHearts();
+          }
+        } else {
           document.getElementById("text1").innerHTML += txt1.charAt(i);
         }
         i++;
         setTimeout(typeWriter, speed);
       } else if (i >= txt1.length) {
         stopHearts();
-        setTimeout(() => stopHearts(),4000);
+        setTimeout(() => stopHearts(), 4000);
       }
     }
 
-    startHearts(4000);
-    typeWriter();
+    function playAudioLoop() {
+      const audio = document.getElementById('audio');
+      const maxPlayTime = 6.1; // Max time to play in seconds
+
+      audio.addEventListener('play', function () {
+        const intervalId = setInterval(() => {
+          if (audio.currentTime >= maxPlayTime) {
+            audio.currentTime = 0; // Reset to the start
+          }
+        }, 1000);
+
+        // Stop the interval when the audio is paused or ended
+        audio.addEventListener('pause', () => clearInterval(intervalId));
+        audio.addEventListener('ended', () => clearInterval(intervalId));
+      });
+    }
+
+    document.getElementById('start-button').addEventListener('click', () => {
+      // Hide the button
+      document.getElementById('start-button').style.display = 'none';
+
+      // Play audio
+      const audio = document.getElementById('audio');
+      audio.play().then(() => {
+        console.log('Audio is playing');
+      }).catch((error) => {
+        console.error('Error playing audio:', error);
+      });
+
+      // Start the audio loop
+      playAudioLoop();
+
+      // Start the animation and text typing
+      startHearts(4000);
+      typeWriter();
+    });
   </script>
 </body>
 
