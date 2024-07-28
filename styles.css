@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    position: absolute;
+    top: -50%; /* Move the image up by 50% of its height */
+    transform: translateY(50%); /* Pull the image down by 50% of its height */
+  }
+  
