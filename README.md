@@ -1,5 +1,4 @@
 
-
 # Create Animated Heartfelt Message with Dynamic Heart Effects
 
 ## Overview
@@ -12,6 +11,7 @@ The **Surprise Proposal Animation** project creates an interactive and engaging 
 - **Floating Hearts**: Adds a romantic touch with hearts that float across the screen.
 - **Responsive Design**: Adapts to various screen sizes with device-specific background images.
 - **Background Image Transitions**: Changes background images and animations based on specific characters in the typewriter message.
+- **Background Music**: Plays a background music track continuously, looping every 65 seconds to enhance the experience.
 
 ## Files Included
 
@@ -56,6 +56,15 @@ The project changes background images based on the typewriter message:
   - Removes the current background image and sets a new one.
   - Adapts the background image for mobile devices by checking the viewport width.
 
+### 5. Background Music
+
+The project includes background music that plays continuously:
+
+- **Music Loop**: The audio plays continuously and loops every 65 seconds. It starts automatically when the user clicks the "Hi" button, and stops only when the page is closed.
+- **Audio Implementation**:
+  - **Play and Pause**: The music starts playing when the user interacts with the page by clicking the "Hi" button.
+  - **Looping Mechanism**: The audio is set to repeat every 65 seconds using JavaScript. An interval is created to handle this looping effect.
+
 ## How to Use
 
 1. **Clone the Repository**
@@ -70,6 +79,7 @@ The project changes background images based on the typewriter message:
 3. **Customize the Content**
    - **Update Background Images**: Modify the URLs in the JavaScript code to use your preferred images.
    - **Adjust Typewriter Message**: Customize the `txt1` variable in `script` to include your personal message and formatting.
+   - **Update Audio**: Replace the `src` attribute in the `<audio>` element with your preferred audio file URL.
 
 4. **Modify Responsive Settings**
    - Adjust the breakpoint in the `isMobileDevice` function in `script` to fit different screen sizes if needed.
@@ -80,7 +90,6 @@ The project changes background images based on the typewriter message:
 Feel free to contribute to this project:
 - **Issues**: Report any bugs or issues you encounter.
 - **Pull Requests**: Submit changes or improvements to the project.
-
 
 ## Acknowledgements
 
