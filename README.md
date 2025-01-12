@@ -22,31 +22,8 @@ Listen to it here: [YouTube Link 🎵](https://youtu.be/1rcZUAAnd1M?si=EE5eH4rOo
 - 🎨 **Dynamic Backgrounds**: Changes based on the typewriter message for added visual appeal.
 - 🎵 **Background Music**: Loops continuously to set the perfect mood.
 
----
+-
 
-## 📸 Screenshots and Implementation Highlights  
-
-### 1. Floating Hearts Animation 💕  
-![Floating Hearts Animation](https://via.placeholder.com/600x400.png?text=Floating+Hearts)  
-**Description**: Floating hearts add a touch of romance, animated with smooth keyframes and fade-out effects.  
-
-### 2. Typewriter Effect in Action 🖋️  
-![Typewriter Effect](https://via.placeholder.com/600x400.png?text=Typewriter+Effect)  
-**Description**: The personalized message unfolds one character at a time, creating a sense of suspense and drama.  
-
-### 3. Background Transitions 🎨  
-![Dynamic Background Changes](https://via.placeholder.com/600x400.png?text=Dynamic+Background)  
-**Description**: Backgrounds dynamically change based on specific characters in the typewriter message, keeping the visuals engaging and fresh.  
-
-### 4. Responsive Design 📱  
-![Mobile-Friendly Layout](https://via.placeholder.com/600x400.png?text=Responsive+Design)  
-**Description**: Optimized for both mobile and desktop screens, with tailored layouts and device-specific backgrounds.  
-
-### 5. Background Music 🎵  
-![Background Music Player](https://via.placeholder.com/600x400.png?text=Music+Player)  
-**Description**: The looping audio track plays *"Em Sandeham Ledu"* from the movie *Oohalu Gusagusalade*, creating a perfect romantic atmosphere.  
-
----
 
 ## 🛠️ Files Included
 
@@ -118,7 +95,7 @@ Listen to it here: [YouTube Link 🎵](https://youtu.be/1rcZUAAnd1M?si=EE5eH4rOo
 ![](p4.png)
 
 
-![](p1\5.png)
+![](p5.png)
 
 
 
