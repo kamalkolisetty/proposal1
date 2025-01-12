@@ -68,7 +68,6 @@
       text-align: center;
     }
 
-    /* Mobile-specific styles */
     @media (max-width: 600px) {
       body {
         flex-direction: column;
@@ -157,7 +156,7 @@
     }
 
     var i = 0;
-    var txt1 = " Hi SweetHeart.....!😊  < Now I wan't to say something special to you.🫣 <<     So , Please read everything carefully...! 😚                                                       > When I saw you for the first time < You seems something Special to me. 🫠 <<                  As the days goes < you get closer to me....!💝💝 <<                           I don't know the reason why your thoughts always resonates inside my mind  ...!🥹                                                    > Everything about you is always intresting for me...!🥰                     << I am somewhat nervous🥴 << Because I haven't said these words to anyone and I won't say to anyone in future...!🙃                                                     > I Love my Parents so much than anything else in this world....!                    << Now You are the only person  whom I love equally with my parents....! 🫠                                                            >I Love U <SweetHeart.....! ❤️❤️❤️|                  <<<< Give me One chance to Prove my Love ...!     💞💞💞                                                                      " ;
+    var txt1 = " Hi SweetHeart.....!😊  < Now I wan't to say something special to you.🫣 <<     So , Please read everything carefully...! 😚                                                       > When I saw you for the first time < You seems something Special to me. 🫠 <<                  As the days goes < you get closer to me....!💝💝 <<                           I don't know the reason why your thoughts always resonates inside my mind  ...!🥹                                                    > Everything about you is always intresting for me...!🥰                     << I am somewhat nervous🥴 << Because I haven't said these words to anyone and I won't say to anyone in future...!🙃                                                     > I Love my Parents so much than anything else in this world....!                    << Now You are the only person  whom I love equally with my parents....! 🫠                                                            >I Love U <SweetHeart.....! ❤️❤️❤️|                  <<<< Give me One chance to Prove my Love ...!     💞💞💞                                                                      ";
     var speed = 90;
 
     function isMobileDevice() {
@@ -200,23 +199,6 @@
       }
     }
 
-    function playAudioLoop() {
-      const audio = document.getElementById('audio');
-      const maxPlayTime = 6.1; // Max time to play in seconds
-
-      audio.addEventListener('play', function () {
-        const intervalId = setInterval(() => {
-          if (audio.currentTime >= maxPlayTime) {
-            audio.currentTime = 0; // Reset to the start
-          }
-        }, 1000);
-
-        // Stop the interval when the audio is paused or ended
-        audio.addEventListener('pause', () => clearInterval(intervalId));
-        audio.addEventListener('ended', () => clearInterval(intervalId));
-      });
-    }
-
     document.getElementById('start-button').addEventListener('click', () => {
       // Hide the button
       document.getElementById('start-button').style.display = 'none';
@@ -228,9 +210,6 @@
       }).catch((error) => {
         console.error('Error playing audio:', error);
       });
-
-      // Start the audio loop
-      playAudioLoop();
 
       // Start the animation and text typing
       startHearts(4000);
